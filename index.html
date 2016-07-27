@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BlogNgBsApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog App with Ng Bootstrap</title>
+
+  <script src="./bower_components/jquery/dist/jquery.js"></script>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/controllers/post_controller.js"></script>
+  <script src="./js/controllers/modal_controller.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body class="container" ng-controller="PostCtrl">
+  <!-- HEADER -->
+  <div class="top-title">
+    <h1> Blog App with Angular Bootstrap</h1>
+  </div>
+
+  <!-- CREATE POST -->
+  <div class="create-new-post">
+    <form class="form form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control input-sm" placeholder="title" ng-model="title_input"></input>
+        <input type="text" class="form-control input-sm" placeholder="date" ng-model="date_input"></input>
+        <input type="text" class="form-control input-sm" placeholder="content" ng-model="content_input"></input>
+        <button class="btn btn-sm btn-default create-post-btn" ng-click="createPost()"> Create New Post </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- POST LIST -->
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="post in posts">
+        <!-- DELETE BUTTON -->
+        <button type="button" class="close" ng-click="deletePost($index)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <!-- POST -->
+        <div class="row post-preview">
+          <h3 class="col-xs-12"> {{ post.title }} </h3>
+          <p class="col-xs-12"> {{ post.date }} </p>
+        </div>
+
+        <!-- VIEW BUTTON -->
+        <button class="btn btn-block btn-default modal-post-btn pull-right" ng-click="viewPost($index)"> View </button>
+        <div class="clear-fix"></div>
+      </li>
+    </ul>
+  </div>
+
+
+</body>
+</html>

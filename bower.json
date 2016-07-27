@@ -1,0 +1,23 @@
+{
+  "name": "ng_blog_bootstrap_app",
+  "authors": [
+    "twahyuni <ti.wahyuni@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.0.0",
+    "angular-animate": "^1.5.8"
+  }
+}

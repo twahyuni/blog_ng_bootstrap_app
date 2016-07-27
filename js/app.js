@@ -1,0 +1,1 @@
+var app = angular.module("BlogNgBsApp", ['ngAnimate', 'ui.bootstrap']);
